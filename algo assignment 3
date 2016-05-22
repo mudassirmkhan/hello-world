@@ -1,0 +1,99 @@
+//Algorithms and Computing
+//MUDASSIR MAQSOOD KHAN
+//8047
+//Assignment 3
+//Lec FATIMA FARUQ
+//POLLUTION IN ENVIRONMENT
+
+#include <iostream>
+using namespace std;
+
+class PollutionOf
+{
+private:
+	int numberOfVeh;
+	int factories;
+	int population;
+	int power_generation;
+public:
+	void vehiclePollution (int numcars, int numbikes)
+	{
+		numberOfVeh = numcars + numbikes;
+		if (numberOfVeh >= 10000)
+		{
+			cout << "Excessive Carbon Gas Discharge Due To Vehicles. Govt Needs To Reduce Vehicles." << endl;
+		}
+
+		else
+			cout << "No Of Vehicles Is Optimum" << endl;
+	}
+
+	void factPollution (int numFactory)
+	{
+		factories = numFactory;
+		if (factories > 20)
+		{
+			cout << "Number Of Factories Is too High For This City." << endl;
+		}
+		else
+			cout << "Though Number OF Factories Is Not Alarming But Should Be Reduced. " << endl;
+	}
+
+	void populPollut (int numPeople, int rate)
+	{
+		population = numPeople;
+		if (numPeople > 10000 && rate > 0.5)
+		{
+			cout << "Population Should Be Brought In Control. It Has Reached Alarming Stage " << endl;
+		}
+
+		else
+			cout << "Population COnditions are normal " << endl;
+	}
+
+	void powerPoll (int powerStations)
+	{
+		power_generation = powerStations;
+		if (power_generation > 5)
+		{
+			cout << "Warning! Excessive Power Generation Units!! Power Generation Units SHould Be reduced " << endl;
+		}
+
+		else
+			cout << "Power Generation Units Are Good In Number. If more needed, should be planted outside city" << endl;
+	}
+};
+
+int main()
+{
+	PollutionOf mycity;
+	int numofcars, numofbikes, numoffact, numofpeople, numofpower, rate;
+
+	cout << "Please Enter Number Of Cars " << endl;
+	cin >> numofcars;
+
+	cout << "Please Enter Number Of Bikes In City" << endl;
+	cin >> numofbikes;
+
+	mycity.vehiclePollution(numofcars, numofbikes);
+
+	cout << "Please Enter Number Of Factories:" << endl;
+	cin >> numoffact;
+
+	mycity.factPollution(numoffact);
+
+	cout << "Please Enter Number Of People" << endl;
+	cin >> numofpeople;
+	
+
+	cout << "Rate Of growth" << endl;
+	cin >> rate;
+
+	mycity.populPollut(numofpeople, rate);
+
+	cout << "Please Enter Number Of Power stations" << endl;
+	cin >> numofpower;
+	mycity.powerPoll(numofpower);
+
+	return 0;
+}
